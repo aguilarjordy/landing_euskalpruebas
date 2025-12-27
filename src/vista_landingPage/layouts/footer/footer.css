@@ -1,0 +1,154 @@
+.footer {
+  width: 100%;
+  background: #0F5F7C;
+  padding: 50px 40px;
+  font-family: sans-serif;
+  color: #fff;   /* ← AHORA TODO EL TEXTO ES BLANCO */
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+/* Grid adaptable */
+.footer-grid {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-menu {
+  padding-left: 100px;
+}
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.footer-menu li a:hover {
+  color: #D98400;
+}
+.footer-col h4 {
+  margin-bottom: 6px;
+}
+
+.footer-col p {
+  margin-bottom: 12px;
+}
+
+/* Mayor separación solo antes de la sección social */
+.footer-social-title {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+/* Listas */
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  margin: 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover suave */
+.footer ul li:hover {
+  color: #d47c2c;
+  transform: translateX(3px);
+}
+
+/* Logo */
+.logo-footer {
+  width: 160px;
+  margin-bottom: 18px;
+}
+
+/* Íconos redes */
+.footer-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  transform: scale(1.1);
+  background: #ddd;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1110px) {
+  .footer-menu{
+    padding-left: 25%;
+  }
+  .footer-grid {
+    margin-left: 40px;
+    margin-right: 40px;
+    gap: 30px;
+  }
+}
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para tablets */
+    gap: 30px;
+    margin-left: 40px;   /* reducimos los márgenes */
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-left: 20px;  /* casi sin margen en móviles */
+    margin-right: 20px;
+  }
+
+  .footer {
+    padding: 40px 20px;
+  }
+.footer-menu{
+  padding-left: 0%;
+}
+  .footer-menu ul li {
+    text-align: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+}
+@media (max-width: 465px) {
+  
+  .footer-logo {
+    height: 80px; /* opcional: que sea un poco más pequeño si quieres */
+  } & p{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

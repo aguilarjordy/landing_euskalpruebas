@@ -1,0 +1,10 @@
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* mitad porque duplicas elementos */
+}
+
+.slider-track {
+  display: flex;
+  width: calc(300px * 7 * 2); /* 7 items x ancho x 2 porque duplicas */
+  animation: slide 20s linear infinite;
+}

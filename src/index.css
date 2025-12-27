@@ -1,0 +1,98 @@
+/*PARA TODA LA PAGINA     : esto es para estilos que afectan a toda la pagina*/
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Para que el footer se mantenga abajo */
+
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Esto suaviza el salto de página y ayuda a AOS */
+html {
+  scroll-behavior: smooth;
+}
+/* Estructura general */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Main empuja el footer */
+.contenido {
+  flex: 1;
+  padding: 0px;
+}
+
+/* ANIMACIONES DE ENTRADA */
+
+/* 1. Desvanecer y subir (Ideal para títulos y cards) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Entrada lateral (Ideal para imágenes a los lados) */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Clases globales para usar en tus JSX */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+/* Delays para que no todo salga al mismo tiempo */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+
+/* Para pantallas móviles */
+@media (max-width: 768px) {
+  body, html {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  .pagina-inicio, .layout-container, .contenido {
+    
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+}
+

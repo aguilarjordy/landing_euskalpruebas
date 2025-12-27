@@ -1,0 +1,97 @@
+/* =========================
+   HERO BASE (estructura)
+========================= */
+
+.contenedor-hero {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* overlay */
+.contenedor-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* contenido */
+.contenido-hero {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.contenido-hero h1 {
+  font-size: clamp(24px, 4.5vw, 45px);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.contenido-hero p {
+  font-size: clamp(14px, 2.2vw, 20px);
+  margin-top: 10px;
+}
+
+/* =========================
+   VARIANTES
+========================= */
+
+/* HERO INICIO */
+.hero-inicio {
+  min-height: 420px;
+  padding: clamp(70px, 12vw, 160px) 20px;
+}
+
+/* HERO INTERNO */
+.hero-interno {
+  min-height: 260px;
+  padding: clamp(40px, 6vw, 90px) 20px;
+}
+
+/* =========================
+   BREAKPOINTS
+========================= */
+
+@media (max-width: 768px) {
+  .hero-inicio {
+    min-height: 340px;
+  }
+
+  .hero-interno {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 505px) {
+  .hero-inicio {
+    min-height: 300px;
+    padding: 50px 15px;
+  }
+
+  .hero-interno {
+    min-height: 180px;
+    padding: 30px 15px;
+  }
+
+  .contenido-hero h1 {
+    font-size: 22px;
+  }
+
+  .contenido-hero p {
+    font-size: 14px;
+  }
+}
