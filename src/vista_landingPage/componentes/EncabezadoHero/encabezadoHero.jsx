@@ -1,4 +1,4 @@
-import "./EncabezadoHero.css";
+import "./encabezadoHero.css";
 
 export default function EncabezadoHero({
   titulo = "",
