@@ -24,24 +24,40 @@ export default function Inicio() {
 
   return (
     <section className="pagina-inicio">
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "60px 20px" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
+      {/* SECCIÓN ACERCA DE NOSOTROS CORREGIDA */}
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "40px 20px" }}>
+        <div style={{ 
+          display: "flex", 
+          flexWrap: "wrap", 
+          alignItems: "center", 
+          gap: "30px", // Reducido un poco para móviles
+          justifyContent: "center" 
+        }}>
           {/* Imagen con entrada desde la izquierda */}
-          <div style={{ flex: 1, minWidth: "300px" }} data-aos="fade-right">
+          <div style={{ flex: "1 1 300px", maxWidth: "500px" }} data-aos="fade-right">
             <img
               src="/imageneSliderNosotros/InicioimagenNosotros.svg"
               alt="Acerca de Nosotros"
-              style={{ width: "100%", maxWidth: "500px", maxHeight: "500px", borderRadius: "10px" }}
+              style={{ width: "100%", height: "auto", borderRadius: "10px" }}
             />
           </div>
-          {/* Texto con entrada desde la derecha */}
-          <div style={{ flex: 1, minWidth: "500px", paddingRight: "20px" }} data-aos="fade-left">
-            <h2 style={{ color: "#0D5F7D", fontSize: "42px", marginBottom: "30px" }}>
+          
+          {/* Texto con entrada desde la derecha - SOLUCIÓN RESPONSIVA */}
+          <div style={{ 
+            flex: "1 1 300px", // Cambiado de 1 a flexible con base de 300px
+            minWidth: "unset", // ELIMINADO el minWidth de 500px
+            padding: "0 10px" 
+          }} data-aos="fade-left">
+            <h2 style={{ 
+              color: "#0D5F7D", 
+              fontSize: "clamp(28px, 5vw, 42px)", // Tamaño dinámico
+              marginBottom: "20px" 
+            }}>
               Acerca de Nosotros
             </h2>
-            <p style={{ fontSize: "18px", lineHeight: "1.6", color: "#333" }}>
+            <p style={{ fontSize: "clamp(16px, 4vw, 18px)", lineHeight: "1.6", color: "#333" }}>
               Somos una empresa dedicada a la importación, comercialización y distribución de accesorios y
-              equipos de uso industrial necesarios para la minería, pesca, construcción, petróleo, electricidad y metal mecánica
+              equipos de uso industrial necesarios para la minería, pesca, construcción, petróleo, electricidad y metal mecánica.
             </p>
             <br />
             <button
@@ -64,14 +80,18 @@ export default function Inicio() {
         </div>
       </div>
 
-      {/* Sección de Ventajas con efecto fade-up individual */}
-      <div style={{ backgroundColor: "#EAF2F8", borderRadius: "20px", boxShadow: "0 8px 25px rgba(0,0,0,0.1)" }}>
-        <div style={{ maxWidth: "1200px", margin: "40px auto", padding: "30px 20px", textAlign: "center" }}>
-          <h2 style={{ color: "#0D5F7D", fontSize: "36px", marginBottom: "50px" }} data-aos="fade-up">
+      {/* Sección de Ventajas */}
+      <div style={{ backgroundColor: "#EAF2F8", borderRadius: "20px", boxShadow: "0 8px 25px rgba(0,0,0,0.1)", margin: "0 10px" }}>
+        <div style={{ maxWidth: "1200px", margin: "40px auto", padding: "40px 20px", textAlign: "center" }}>
+          <h2 style={{ color: "#0D5F7D", fontSize: "clamp(24px, 5vw, 36px)", marginBottom: "40px" }} data-aos="fade-up">
             ¿Por qué elegirnos?
           </h2>
 
-          <div className="ventajas-container">
+          <div className="ventajas-container" style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", 
+            gap: "20px" 
+          }}>
             <div className="ventaja-card" data-aos="fade-up" data-aos-delay="100">
               <h3>Seguridad</h3>
               <p>Nuestros equipos cumplen con los más altos estándares para proteger personas y materiales.</p>
@@ -91,26 +111,26 @@ export default function Inicio() {
           </div>
         </div>
       </div>
-      <header style={{ textAlign: "center", marginTop: "30px" }}>
+
+      <header style={{ textAlign: "center", marginTop: "50px" }}>
         <h2 className="titulo">Nuestros Productos</h2>
-        
       </header>
       <ProductosCards modo="slider" />
       <ServiciosCards />
 
       {/* Sectores */}
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 20px", textAlign: "center" }} data-aos="zoom-in">
-        <h2 style={{ color: "#0D5F7D", fontSize: "40px", marginBottom: "20px" }}>Sectores</h2>
+        <h2 style={{ color: "#0D5F7D", fontSize: "clamp(28px, 5vw, 40px)", marginBottom: "20px" }}>Sectores</h2>
         <SectoresSlider />
       </div>
 
-      {/* TESTIMONIOS con cascada */}
+      {/* TESTIMONIOS */}
       <div className="testimonios" style={{ padding: "60px 0", backgroundColor: "#f7f7f7" }}>
         <div className="container" style={{ width: "90%", maxWidth: "1000px", margin: "0 auto", textAlign: "center" }}>
           <span className="tag" style={{ display: "inline-block", padding: "6px 18px", background: "#ffb74aff", color: "#fff", borderRadius: "5px", fontSize: "15px", letterSpacing: "1px", marginBottom: "12px" }}>
             OPINIONES
           </span>
-          <h2 className="titulo" style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", color: "#0D5F7D" }}>
+          <h2 className="titulo" style={{ fontSize: "clamp(24px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", color: "#0D5F7D" }}>
             Lo que dicen nuestros clientes
           </h2>
 
