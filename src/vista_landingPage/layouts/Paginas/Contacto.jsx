@@ -15,7 +15,6 @@ export default function Contacto({ }) {
           flexWrap: "wrap"
         }}
       >
-        {/* Imagen: Entra desde la IZQUIERDA */}
         <div 
           style={{ flex: "1 1 300px", maxWidth: "500px", marginTop:"10px" }}
           data-aos="fade-right"
@@ -26,14 +25,13 @@ export default function Contacto({ }) {
             alt="Contacto"
             style={{
               width: "100%",
-              height: "100%",
+              height: "auto", // Cambiado a auto para mantener proporción
               objectFit: "cover",
               borderRadius: "10px"
             }}
           />
         </div>
 
-        {/* Formulario: Entra desde la DERECHA con un pequeño retraso */}
         <div 
           style={{ flex: "1 1 300px", maxWidth: "500px" }}
           data-aos="fade-left"
@@ -44,12 +42,12 @@ export default function Contacto({ }) {
         </div>
       </section>
 
-      {/* Mapa: Aparece con un efecto de Zoom desde abajo */}
+      {/* CONTENEDOR DEL MAPA CORREGIDO */}
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: "0 20px",
+          padding: "0 10px", // Menos padding en los bordes para móviles
           marginTop: "30px"
         }}
         data-aos="zoom-in-up"
@@ -58,8 +56,8 @@ export default function Contacto({ }) {
         <div
           style={{
             width: "100%",
-            maxWidth: "80%",
-            height: "500px",
+            maxWidth: "1100px", // Aumentamos el máximo para que respire mejor
+            height: "auto",     // ¡IMPORTANTE! Cambiado de 500px a auto
             borderRadius: "10px",
             overflow: "hidden",
             boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
